@@ -15,12 +15,12 @@ EAST-SPL replaces static single-frame tiling with an event-aware objective that 
 
 ## The SPL-BEV with tile agnostic rejection head
 
-The rejection head is attached
+The rejection head is attached to a shared Conv-block of Unet from feature extractor block in SPL-BEV. This will additionally save some FLOPs. In addition make the isolated training of MLP head for rejection network easier, since precalculated feature maps could be saved into vectors once and used as inputs for training.
 
 [![Rejection head attachement architecture](assets/Architecture.png)](assets/Architecture.png)
 **Figure 2** The architecture of SPL-BEV feature extractor with rejection head.
 
-## Experimental results (Tiles Config. search)
+## Optimal Tiles Config. search
 
 | Search      | Objective | Pop. Size | Runtime (s) | ETF (GFLOPs) | TF (GFLOPs) | TF + M (GFLOPs) |
 |-------------|-----------|-----------|-------------|--------------|-------------|------------------|
@@ -33,7 +33,7 @@ The rejection head is attached
 
 **Table 1 in the paper.** Comparison of search methods and objectives. The Genetic Algorithm achieves lower runtime and better TF + M values than the Grid Search used in [DTSPL-BEV](https://doi.org/10.5220/0014468500004067), while optimizing the new ETF objective substantially reduces expected computational cost. `TF` denotes Total FLOPs, `ETF` denotes Expected Total FLOPs, and `TF + M` denotes Total FLOPs after merging.
 
-## Experimental results 
+## Isolated training of Rejection head 
 
 The performance of an MLP attached to the main feature extractor in the DTSPL-BEV architecture as shown in the **Fig. 2** the has been studied independently as the training of the primary localization network!
 
