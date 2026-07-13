@@ -24,9 +24,9 @@ EAST-SPL replaces static single-frame tiling with an event-aware objective that 
 
 **Table 1 in the paper.** Comparison of search methods and objectives. The Genetic Algorithm achieves lower runtime and better TF + M values than the Grid Search used in [DTSPL-BEV](https://doi.org/10.5220/0014468500004067), while optimizing the new ETF objective substantially reduces expected computational cost. `TF` denotes Total FLOPs, `ETF` denotes Expected Total FLOPs, and `TF + M` denotes Total FLOPs after merging.
 
-## Experimental results (Isolated training of rej. net.)
-
-
+## Experimental results 
+(Isolated training of rej. net.)
+![Training of Rejection head](assets/Architectural Search Performances.png)
 
 ## Citation
 If you use this repository, please cite the main paper:
