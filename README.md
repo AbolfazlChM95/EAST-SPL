@@ -3,15 +3,24 @@
 
 Official Repository of "EAST-SPL: Event-Aware Statistical Tiling for Decomposable Soccer Player Localization with an auxiliary rejection network". Accepted to International Conference on Pattern Recognition (ICPR) 2026. Lyon, France
 
+> [!WARNING]
+> **Work in progress:** This repository is actively being prepared for the official release.  
 
 ## Overview
 
 EAST-SPL replaces static single-frame tiling with an event-aware objective that minimizes **Expected Total FLOPs**. It uses player-location statistics to allocate finer tiles where players are more likely to appear, an **auxiliary rejection network** to skip empty tiles, and a **genetic algorithm** to optimize the tiling configuration.
 
+[![EAST-SPL](assets/TripleFigure.png)](assets/TripleFigure.png)
+**Figure 1** (Left) Aggregated statistics of players locations on the pitch. (Right) Projected statistics and calculated probabilities for specific camera setting and tile configuration.
 
-# Details
+## The SPL-BEV with tile agnostic rejection head
 
-## Experimental results (Tiles Config. search)
+The rejection head is attached to a shared Conv-block of Unet from feature extractor block in SPL-BEV. This will additionally save some FLOPs. In addition make the isolated training of MLP head for rejection network easier, since precalculated feature maps could be saved into vectors once and used as inputs for training.
+
+[![Rejection head attachement architecture](assets/Architecture.png)](assets/Architecture.png)
+**Figure 2** The architecture of SPL-BEV feature extractor with rejection head.
+
+## Optimal Tiles Config. search
 
 | Search      | Objective | Pop. Size | Runtime (s) | ETF (GFLOPs) | TF (GFLOPs) | TF + M (GFLOPs) |
 |-------------|-----------|-----------|-------------|--------------|-------------|------------------|
@@ -24,9 +33,12 @@ EAST-SPL replaces static single-frame tiling with an event-aware objective that 
 
 **Table 1 in the paper.** Comparison of search methods and objectives. The Genetic Algorithm achieves lower runtime and better TF + M values than the Grid Search used in [DTSPL-BEV](https://doi.org/10.5220/0014468500004067), while optimizing the new ETF objective substantially reduces expected computational cost. `TF` denotes Total FLOPs, `ETF` denotes Expected Total FLOPs, and `TF + M` denotes Total FLOPs after merging.
 
-## Experimental results 
-(Isolated training of rej. net.)
-![Training of Rejection head](assets/Architectural Search Performances.png)
+## Isolated training of Rejection head 
+
+The performance of an MLP attached to the main feature extractor in the DTSPL-BEV architecture as shown in the **Fig. 2** the has been studied independently as the training of the primary localization network!
+
+[![Training of Rejection head](assets/Architectural-Search-Performances.png)](assets/Architectural-Search-Performances.png)
+**Figure 3** (Left) the sensitivity (Recall) of trained rejection head on generated dataset from SynLoc dataset vs classification threshold ($\theta$). (Right) Sensitivity vs Rejection rate over entire generated dataset.
 
 ## Citation
 If you use this repository, please cite the main paper:
