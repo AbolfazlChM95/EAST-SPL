@@ -58,3 +58,6 @@ To cite the dataset use:
   isbn={978-989-758-728-3},
 }
 ```
+
+## License
+EAST-SPL code is released under the MIT License. See [LICENSE](LICENSE) for additional details.
