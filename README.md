@@ -20,6 +20,12 @@ The rejection head is attached to a shared Conv-block of Unet from feature extra
 [![Rejection head attachement architecture](assets/Architecture.png)](assets/Architecture.png)
 **Figure 2** The architecture of SPL-BEV feature extractor with rejection head.
 
+## Dataset transformation
+The dataset used for extracting the statistics is [Spiideo SoccerNet SynLoc](https://github.com/Spiideo/sskit) dataset. This repository does not redistribute the dataset. To extract the players locations, you should download and run the
+```bash
+python dataset_transformation/extract_locations.py /path/to/SpiideoSynLoc
+```
+
 ## Optimal Tiles Config. search
 
 | Search      | Objective | Pop. Size | Runtime (s) | ETF (GFLOPs) | TF (GFLOPs) | TF + M (GFLOPs) |
