@@ -9,8 +9,22 @@ Official Repository of "EAST-SPL: Event-Aware Statistical Tiling for Decomposabl
 EAST-SPL replaces static single-frame tiling with an event-aware objective that minimizes **Expected Total FLOPs**. It uses player-location statistics to allocate finer tiles where players are more likely to appear, an **auxiliary rejection network** to skip empty tiles, and a **genetic algorithm** to optimize the tiling configuration.
 
 
+# Details
 
+## Experimental results (Tiles Config. search)
 
+| Search      | Objective | Pop. Size | Runtime (s) | ETF (GFLOPs) | TF (GFLOPs) | TF + M (GFLOPs) |
+|-------------|-----------|-----------|-------------|--------------|-------------|------------------|
+| Grid Search | ETF       | —         | 96.7        | 38.8         | —           | 308.2            |
+| Grid Search | TF + M    | —         | 90.2        | 101.5        | —           | 163.4            |
+| Genetic Algorithm | TF + M    | 50        | **2.3**     | 47.9         | 195.4       | 162.9            |
+| Genetic Algorithm | TF + M    | 100       | 62.5        | 55.7         | 200.0       | **156.0**        |
+| Genetic Algorithm | TF + M    | 100       | 54.2        | 43.9         | 217.2       | 158.2            |
+| Genetic Algorithm | ETF       | 50        | 52.0        | **24.1**     | 232.5       | 165.8            |
+
+**Table 1 in the paper.** Comparison of search methods and objectives. The Genetic Algorithm achieves lower runtime and better TF + M values than the Grid Search used in [DTSPL-BEV](https://doi.org/10.5220/0014468500004067), while optimizing the new ETF objective substantially reduces expected computational cost. `TF` denotes Total FLOPs, `ETF` denotes Expected Total FLOPs, and `TF + M` denotes Total FLOPs after merging.
+
+## Experimental results (Isolated training of rej. net.)
 
 
 
