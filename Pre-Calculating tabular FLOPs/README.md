@@ -5,7 +5,7 @@ network components over different input dimensions.
 
 ## Main script
 
-[`calculate_flops.py`](calculate_flops.py) profiles:
+[`main.py`](main.py) profiles:
 
 - the complete U-Net localization network;
 - the shared feature-extraction block used by the rejection network.
@@ -29,4 +29,4 @@ The script requires:
 From the repository root:
 
 ```bash
-python flops_calculation/calculate_flops.py
+python Pre-Calculating_tabular_FLOPs/main.py
