@@ -14,8 +14,9 @@ example to run:
     python dataset_transformation/project_to_image.py \
         /path/to/SpiideoSynLoc \
         player_positions.pkl \
-        sample_images/017770.jpg \
-        --image-split train
+        sample_field/023626.jpg \
+        --image-split train \
+        --plot
         
 Project:
     EAST-SPL
