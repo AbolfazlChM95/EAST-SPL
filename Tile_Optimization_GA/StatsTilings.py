@@ -207,7 +207,7 @@ def Merge(tile_boxes, merge_max_length: int):
         tile_boxes = np.array(merged)
     return tile_boxes
 
-def PlotTilesProbOnImage(Tiles, img, projectedStats, title = None):
+def PlotTilesProbOnImage(Tiles, img, projectedStats, title=None, save_path=None):
     probs = Tiles2Prob(Tiles, projectedStats)
     fig , ax = plt.subplots(figsize=(15, 12))
     ax.imshow(img)
@@ -224,9 +224,14 @@ def PlotTilesProbOnImage(Tiles, img, projectedStats, title = None):
         ax.text(y,x,f"{probs[i]*100:.1f}%",color='white',fontsize=12,fontweight='bold',va='top',ha='left')
     if title:
         plt.title(title)
-    plt.show()
+    
+    if save_path:
+        fig.savefig(save_path, dpi=300, bbox_inches="tight")
+        plt.close(fig)
+    else:
+        plt.show()
 
-def PlotTilesOnImage(Tiles, img, title = None):
+def PlotTilesOnImage(Tiles, img, title=None, save_path=None):
     fig , ax = plt.subplots(figsize=(15, 12))
     ax.imshow(img)
     for i,tile in enumerate(Tiles):
@@ -241,5 +246,10 @@ def PlotTilesOnImage(Tiles, img, title = None):
         ax.add_patch(rect)
     if title:
         plt.title(title)
-    plt.show()
+
+    if save_path:
+        fig.savefig(save_path, dpi=300, bbox_inches="tight")
+        plt.close(fig)
+    else:
+        plt.show()
     
