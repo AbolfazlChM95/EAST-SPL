@@ -47,6 +47,14 @@ The performance of an MLP attached to the main feature extractor in the DTSPL-BE
 [![Training of Rejection head](assets/Architectural-Search-Performances.png)](assets/Architectural-Search-Performances.png)
 **Figure 3** (Left) the sensitivity (Recall) of trained rejection head on generated dataset from SynLoc dataset vs classification threshold ($\theta$). (Right) Sensitivity vs Rejection rate over entire generated dataset.
 
+## Installation
+Clone the repository and install the required Python packages:
+```bash
+git clone https://github.com/AbolfazlChM95/EAST-SPL.git
+cd EAST-SPL
+python3 -m pip install -r requirements.txt
+```
+
 ## Citation
 If you use this repository, please cite the main paper:
 ```bibtex
