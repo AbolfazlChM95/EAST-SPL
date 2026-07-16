@@ -3,9 +3,14 @@
 
 Official Repository of "EAST-SPL: Event-Aware Statistical Tiling for Decomposable Soccer Player Localization with an auxiliary rejection network". Accepted to International Conference on Pattern Recognition (ICPR) 2026. Lyon, France
 
+![Python](https://img.shields.io/badge/Python-3.x-blue?logo=python&logoColor=white)
+![PyTorch](https://img.shields.io/badge/PyTorch-required-ee4c2c?logo=pytorch&logoColor=white)
+![License](https://img.shields.io/github/license/AbolfazlChM95/EAST-SPL)
+![Release](https://img.shields.io/github/v/release/AbolfazlChM95/EAST-SPL?include_prereleases)
+
+
 > [!TIP]
 > This repository contains four subprojects. See the `README.md` inside each subproject folder for setup, usage, and implementation details.
-  
 
 ## Overview
 
