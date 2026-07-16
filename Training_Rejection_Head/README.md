@@ -37,4 +37,7 @@ Training_Rejection_Head/
     └── val/
 ```
 
+## Download a generated dataset
+You can skip the [`feature_extraction.py`](feature_extraction.py) and download one sampled generated feature dataset from [here](https://drive.google.com/file/d/1kepOvSs2l3rjyPTu4eFC-nfTR1TNg6Tv/view?usp=sharing).
+
 ## Training of MLP on generated feature dataset
