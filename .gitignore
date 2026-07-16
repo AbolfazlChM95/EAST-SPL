@@ -25,3 +25,6 @@ dist/
 .DS_Store
 .vscode/
 .idea/
+
+# Generated rejection-head features
+/Training_Rejection_Head/Features/
