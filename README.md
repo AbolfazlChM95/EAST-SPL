@@ -3,8 +3,11 @@
 
 Official Repository of "EAST-SPL: Event-Aware Statistical Tiling for Decomposable Soccer Player Localization with an auxiliary rejection network". Accepted to International Conference on Pattern Recognition (ICPR) 2026. Lyon, France
 
-> [!WARNING]
-> **Work in progress:** This repository is actively being prepared for the official release.  
+![Python](https://img.shields.io/badge/Python-3.x-blue?logo=python&logoColor=white)
+![PyTorch](https://img.shields.io/badge/PyTorch-required-ee4c2c?logo=pytorch&logoColor=white)
+![License](https://img.shields.io/github/license/AbolfazlChM95/EAST-SPL)
+![Release](https://img.shields.io/github/v/release/AbolfazlChM95/EAST-SPL?include_prereleases)
+
 
 > [!TIP]
 > This repository contains four subprojects. See the `README.md` inside each subproject folder for setup, usage, and implementation details.
@@ -48,6 +51,14 @@ The performance of an MLP attached to the main feature extractor in the DTSPL-BE
 
 [![Training of Rejection head](assets/Architectural-Search-Performances.png)](assets/Architectural-Search-Performances.png)
 **Figure 3** (Left) the sensitivity (Recall) of trained rejection head on generated dataset from SynLoc dataset vs classification threshold ($\theta$). (Right) Sensitivity vs Rejection rate over entire generated dataset.
+
+## Installation
+Clone the repository and install the required Python packages:
+```bash
+git clone https://github.com/AbolfazlChM95/EAST-SPL.git
+cd EAST-SPL
+python3 -m pip install -r requirements.txt
+```
 
 ## Citation
 If you use this repository, please cite the main paper:
