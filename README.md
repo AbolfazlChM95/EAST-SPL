@@ -6,6 +6,9 @@ Official Repository of "EAST-SPL: Event-Aware Statistical Tiling for Decomposabl
 > [!WARNING]
 > **Work in progress:** This repository is actively being prepared for the official release.  
 
+> [!TIP]
+> This repository contains four subprojects. See the `README.md` inside each subproject folder for setup, usage, and implementation details.
+
 ## Overview
 
 EAST-SPL replaces static single-frame tiling with an event-aware objective that minimizes **Expected Total FLOPs**. It uses player-location statistics to allocate finer tiles where players are more likely to appear, an **auxiliary rejection network** to skip empty tiles, and a **genetic algorithm** to optimize the tiling configuration.
