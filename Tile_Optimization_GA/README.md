@@ -193,6 +193,24 @@ The projected heatmap can be generated using the scripts in the [`dataset-transf
 The FLOPs lookup tables can be generated using the scripts in[`Pre-Calculating_tabular_FLOPs`](../Pre-Calculating_tabular_FLOPs/).
 
 
+## [DTSPL-BEV Grid Search](https://doi.org/10.5220/0014468500004067)
+
+[`DTSPLBEV-tiling_methods.py`](/DTSPLBEV_grid_search/DTSPLBEV_tiling_methods.py) contains tiling method from [DTSP-BEV: Decomposable Tiled Soccer Player Localization↗](https://doi.org/10.5220/0014468500004067). Simple example of running for given `initial_tile_length`:
+
+```python
+Tiles, _, _ = Tiling_Methods.Tiling(
+    'DynFlopsA', # method of division
+    img.shape, 
+    initial_tile_size = tile_length, #initial tile length
+    mask = mask,
+    Tiles2FLOPs = Tiles2FLOPs, # calculate the FLOPs from tabular array
+    margin = margin, # marging to add for receptive field
+    minimum_length = min_length,
+    outlier_pixels_threshold = 1,
+    Full_process_verbos = False
+)
+```
+
 ## Future work
 > [!WARNING]
 > The random number generators used in [`TileGenOpt.py`](TileGenOpt.py) are not initialized with a fixed seed. To reproduce exactly the same numerical results, fixed seeds should be added for both Python's `random` module and `NumPy`.
