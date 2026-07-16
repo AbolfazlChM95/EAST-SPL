@@ -3,11 +3,9 @@
 
 Official Repository of "EAST-SPL: Event-Aware Statistical Tiling for Decomposable Soccer Player Localization with an auxiliary rejection network". Accepted to International Conference on Pattern Recognition (ICPR) 2026. Lyon, France
 
-> [!WARNING]
-> **Work in progress:** This repository is actively being prepared for the official release.  
-
 > [!TIP]
 > This repository contains four subprojects. See the `README.md` inside each subproject folder for setup, usage, and implementation details.
+  
 
 ## Overview
 
